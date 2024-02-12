@@ -1,7 +1,14 @@
+###########################################################################
+# IMPORTS
+###########################################################################
+
 from agentpy import Agent
 import numpy as np
 
-# Define the agent
+###############################################################################
+# INVESTOR AGENT
+###############################################################################
+
 class Investor(Agent):
     """ 
     Represents a market agent in the model.
@@ -22,6 +29,11 @@ class Investor(Agent):
     \text{threshold} \sim \mathcal{U}(0, 1)
     \]
     """
+
+    ###########################################################################
+    # INITIALIZATION
+    ###########################################################################
+
     def setup(self):
         """
         Initialize agent attributes.
@@ -29,6 +41,10 @@ class Investor(Agent):
         self.threshold = np.random.uniform(0, 1)  # Initialize threshold uniform [0-1).
         self.strategy = 0 # Initialize strategy as inactive.
         self.asset_holdings = 100  # Initialize asset holdings unform [0, 100).
+
+    ###########################################################################
+    # MARKET FUNCTIONS
+    ###########################################################################
 
     def trade(self):
         """
@@ -43,6 +59,10 @@ class Investor(Agent):
             self.asset_holdings += 1 # Increase agent's assets by 1.
         elif self.strategy == -1: # If agent is selling
             self.asset_holdings -= 1 # Increase agent's assets by 1.
+
+    ###########################################################################
+    # STRATEGY FUNCTIONS
+    ###########################################################################
 
     def update_threshold(self):
         """

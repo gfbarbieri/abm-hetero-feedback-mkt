@@ -1,8 +1,17 @@
+###########################################################################
+# IMPORTS
+###########################################################################
+
 from agentpy import Model, AgentList
-from investor import Investor
 import numpy as np
 
-class MarketModel(Model):
+from .investor import Investor
+
+###############################################################################
+# MARKET MODEL
+###############################################################################
+
+class Market(Model):
     """ 
     Represents the market model containing agents and market dynamics.
     

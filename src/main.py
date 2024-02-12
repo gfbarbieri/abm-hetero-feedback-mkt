@@ -4,7 +4,8 @@
 
 from models.market import Market
 from config import base_params
-# import shutil
+import shutil
+import os
 
 ###########################################################################
 # EXECUTE MODEL
@@ -27,7 +28,6 @@ def main():
 
     # Use this until issue is resolved, move data manually.
     results.save(exp_name='market_dynamics', path='data')
-    # shutil.move('source', 'destination')
 
 if __name__ == '__main__':
     main()
